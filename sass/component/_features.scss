@@ -1,0 +1,32 @@
+.feature {
+  color: $color-grey-light-3;
+
+  grid-column: center-start / center-end;
+  //grid-row: 2;
+  padding: 15rem 0;
+  font-size: 1.6rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+  justify-content: center;
+  align-content: center;
+  justify-items: start;
+  column-gap: 10rem;
+  row-gap: 8rem;
+
+  &__box {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content 1fr;
+    column-gap: 2rem;
+    row-gap: 2.5rem;
+  }
+
+  &__icon {
+    width: 7rem;
+    height: 7rem;
+    fill: $color-primary;
+    grid-row: span 2;
+    margin-top: -2rem;
+  }
+}

@@ -1,0 +1,32 @@
+.header {
+  position: relative;
+  grid-column: full-start / full-end;
+  grid-row: 1;
+  position: relative;
+  height: 100vh;
+
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+
+  @media only screen and (max-width: $bp-largest) {
+    grid-template-rows: min-content 1fr;
+
+    position: relative;
+  }
+
+  &__text {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-33%, -20%);
+
+    display: grid;
+    justify-items: center;
+    row-gap: 7rem;
+    width: max-content;
+
+    @media only screen and (max-width: $bp-smallest) {
+      transform: translate(-38%, -20%);
+    }
+  }
+}

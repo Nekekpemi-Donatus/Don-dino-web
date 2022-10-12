@@ -1,0 +1,72 @@
+.navbar {
+  background-color: $color-black;
+  width: 20%;
+  overflow: hidden;
+
+  z-index: 2;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  display: grid;
+  grid-template-rows: min-content min-content;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.4s ease-in;
+
+  @media only screen and (max-width: $bp-largest) {
+    width: minmax(max-content, 30%);
+    background-color: rgba($color-black, 0.6);
+  }
+
+  &__btn {
+    border: none;
+    background-color: transparent;
+    justify-self: end;
+    cursor: pointer;
+  }
+
+  &__icon {
+    height: 4.7rem;
+    width: 4.7rem;
+    fill: $color-primary;
+  }
+}
+
+.list {
+  font-family: $nunito;
+  list-style: none;
+
+  &__item {
+    padding: 2rem;
+    background-image: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 50%,
+      rgba(#fff, 0.05) 50%
+    );
+    background-size: 220%;
+    cursor: pointer;
+    transition: all 0.4s;
+
+    &:hover {
+      color: $color-grey-light-1;
+      background-position: 100%;
+      transform: translateX(1rem);
+    }
+  }
+
+  &__link:link,
+  &__link:visited {
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  &__link--nav:link,
+  &__link--nav:visited {
+    color: $color-primary;
+  }
+}

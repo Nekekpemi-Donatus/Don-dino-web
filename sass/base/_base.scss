@@ -1,0 +1,92 @@
+// COLORS
+// $color-primary: #c69963;
+// $color-primary-dark: #b28451;
+
+$color-primary: #fde68a;
+$color-primary-dark: #fddb54;
+
+$color-secondary: #ff7730;
+
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+$color-grey-light-3: #f7f7f7;
+
+$color-grey-dark-1: #54483a;
+$color-grey-dark-2: #6d5d4b;
+$color-grey-dark-3: #333;
+
+// COLOR BLACK
+$color-black: #080808;
+$color-black-light-1: #101010;
+$color-black-light-2: #181818;
+
+$nunito: "Nunito Sans";
+$Inria: "Inria Serif";
+
+// BREAK POINTS
+$bp-huge: 75em; // 1200px
+$bp-largest: 68.75em; //1100px
+$bp-large: 58.13em; // 930px
+$bp-medium: 50em; // 800px
+$bp-small: 43.75em; // 700px
+$bp-smallest: 37.5em; // 600px
+
+// PHONES
+$bp-lgPhone: 31.25em; // 500px
+$bp-smPhone: 25em; // 400px
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+
+  scroll-behavior: smooth;
+
+  @media only screen and (max-width: $bp-huge) {
+    font-size: 56.25%; // 9 / 16 = 50%
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%; // 8 / 16 = 50%
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 43.75%; // 7 / 16 = 43.75%
+  }
+
+  @media only screen and (max-width: $bp-smallest) {
+    font-size: 37.5%; // 6 / 16 = 43.75%
+  }
+
+  @media only screen and (max-width: $bp-lgPhone) {
+    font-size: 31.25%; // 6 / 16 = 43.75%
+  }
+}
+
+body {
+  scroll-behavior: smooth;
+  font-family: $nunito, sans-serif;
+  color: $color-grey-dark-3;
+  font-weight: 300;
+  line-height: 1.6;
+  background-color: $color-black-light-1;
+}
+
+.container {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr) 6rem [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    )
+    [center-end] 6rem minmax(6rem, 1fr) [full-end];
+  grid-template-rows: 100vh min-content 40vw repeat(5, min-content);
+  overflow: hidden;
+}

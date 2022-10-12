@@ -1,0 +1,91 @@
+.rating {
+  grid-column: 1 / -1;
+  background-color: $color-black-light-2;
+
+  display: grid;
+  grid-template-columns: max-content minmax(max-content, 1fr) max-content minmax(
+      max-content,
+      12vw
+    );
+  align-items: center;
+  column-gap: 4.5rem;
+  color: $color-grey-light-3;
+
+  @media only screen and (max-width: $bp-large) {
+    column-gap: 3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    padding: 2rem 5rem;
+  }
+
+  @media only screen and (max-width: $bp-smPhone) {
+    grid-template-columns: max-content;
+    row-gap: 4rem;
+    justify-content: center;
+    padding: 3rem;
+  }
+
+  &__picture {
+    display: flex;
+    margin-left: 5rem;
+
+    @media only screen and (max-width: $bp-large) {
+      margin-left: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      margin-left: 0;
+    }
+  }
+
+  &__img {
+    box-sizing: content-box;
+
+    display: block;
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    border: 5px solid $color-black-light-2;
+
+    &:not(:first-child) {
+      margin-left: -2rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-right: auto;
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+    fill: $color-primary;
+  }
+
+  &__score {
+    text-align: center;
+    background-color: $color-primary;
+    color: $color-black-light-2;
+    align-self: stretch;
+
+    span {
+      display: block;
+      font-size: 5rem;
+      font-weight: 600;
+      padding: 0 1.5rem;
+    }
+
+    &-rate {
+      display: block;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: -1.5rem;
+    }
+  }
+}
